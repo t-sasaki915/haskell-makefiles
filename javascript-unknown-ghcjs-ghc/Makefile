@@ -4,9 +4,9 @@ EMSDK_VERSION := 3.1.74
 
 SHELL := /bin/bash
 
-.PHONY: init-tools
+.PHONY: init-haskell
 
-init-tools:
+init-haskell:
 ifeq (, $(shell which curl))
 	$(error Please install curl)
 endif
@@ -29,6 +29,6 @@ endif
 	bash -c "source ~/.ghcup/env && source ~/.emsdk/emsdk_env.sh && emconfigure ghcup install ghc --set javascript-unknown-ghcjs-$(GHC_VERSION)"
 
 	@echo ""
-	@echo "INIT-ENV SUCCESSFUL."
+	@echo "INIT-HASKELL SUCCESSFUL."
 	@echo "Please run 'source ~/.bashrc'."
 	@echo ""
