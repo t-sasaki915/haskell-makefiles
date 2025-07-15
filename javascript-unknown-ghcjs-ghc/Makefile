@@ -21,7 +21,7 @@ endif
 
 	bash -c "source ~/.ghcup/env && ghcup install cabal $(CABAL_VERSION)"
 
-	git clone https://github.com/emscripten-core/emsdk.git ~/.emsdk
+	git clone https://github.com/emscripten-core/emsdk.git ~/.emsdk | true
 	~/.emsdk/emsdk install $(EMSDK_VERSION)
 	~/.emsdk/emsdk activate $(EMSDK_VERSION)
 
