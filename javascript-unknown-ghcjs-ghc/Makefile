@@ -4,7 +4,7 @@ EMSDK_VERSION := 3.1.74
 
 SHELL := /bin/bash
 
-.PHONY init-tools
+.PHONY: init-tools
 
 init-tools:
 ifeq (, $(shell which curl))
