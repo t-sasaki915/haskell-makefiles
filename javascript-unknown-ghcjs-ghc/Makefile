@@ -36,6 +36,8 @@ init-ghc:
 
 	bash -c "source ~/.ghcup/env && ghcup install cabal $(CABAL_VERSION)"
 
+	@echo "Installing javascript-unknown-ghcjs-ghc..."
+
 	~/.emsdk/emsdk install $(EMSDK_VERSION)
 	~/.emsdk/emsdk activate $(EMSDK_VERSION)
 
