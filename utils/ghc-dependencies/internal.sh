@@ -73,6 +73,7 @@ case "$DISTRO" in
 			echo "Unknown distribution. Please refer https://www.haskell.org/ghcup/install/#system-requirements"
 			;;
 	esac
+    
 	echo "Installing GHC dependencies for $OS_NAME $VERSION_FRIENDLY..."
-	echo $UPDATE_COMMAND
-	echo $INSTALL_COMMAND $DEPENDENCIES
+	sudo $UPDATE_COMMAND
+	sudo $INSTALL_COMMAND $DEPENDENCIES

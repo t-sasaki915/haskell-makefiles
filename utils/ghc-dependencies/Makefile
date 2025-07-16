@@ -44,4 +44,14 @@ SHELL := /bin/bash
 .PHONY: init-ghc-dependencies
 
 init-ghc-dependencies:
-	@chmod +x ./internal.sh && ./internal.sh
+	@command -v curl >/dev/null 2>&1 || { echo "Please install curl"; exit 1; }
+
+	@if curl -fsSL https://raw.githubusercontent.com/t-sasaki915/ghc-makefiles/refs/heads/main/utils/ghc-dependencies/internal.sh | bash; then \
+		echo ""; \
+		echo "INIT-GHC-DEPENDENCIES SUCCESSFUL."; \
+		echo ""; \
+	else \
+		echo ""; \
+		echo "Failed to install GHC dependencies. Please see https://www.haskell.org/ghcup/install/#system-requirements"; \
+		echo ""; \
+	fi
