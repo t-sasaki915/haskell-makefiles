@@ -70,10 +70,11 @@ case "$DISTRO" in
 			DEPENDENCIES="$ALPINE_GENERIC"
 			;;
 		*)
-			echo "Unknown distribution. Please refer https://www.haskell.org/ghcup/install/#system-requirements"
+			echo "Unknown distribution."
+            exit 1;
 			;;
 	esac
-    
+
 	echo "Installing GHC dependencies for $OS_NAME $VERSION_FRIENDLY..."
 	sudo $UPDATE_COMMAND
 	sudo $INSTALL_COMMAND $DEPENDENCIES
