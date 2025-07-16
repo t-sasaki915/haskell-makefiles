@@ -1,5 +1,5 @@
 # haskell-makefiles
-Makefiles for setting up environments for various GHC flavours
+Collection of Makefiles that automate the setup of Haskell environments
 
 ## `ghc/javascript-unknown-ghcjs-ghc/Makefile`
 This Makefile installs `javascript-unknown-ghcjs-ghc` to your system.
