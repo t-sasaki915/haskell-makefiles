@@ -12,7 +12,7 @@ init-ghc:
 
 	@if [ -e "$$HOME/.ghcup/bin/javascript-unknown-ghcjs-ghc-$(GHC_VERSION)" ]; then \
 		echo "javascript-unknown-ghcjs-ghc-$(GHC_VERSION) has already been installed."; \
-		exit 0; \
+		exit 1; \
 	fi
 	
 	@if [ ! -d "$$HOME/.ghcup" ]; then \
@@ -23,28 +23,28 @@ init-ghc:
 		export BOOTSTRAP_HASKELL_ADJUST_BASHRC=1; \
 		curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh; \
 	else \
-		echo "Makefile found ~/.ghcup directory. Skipping GHCup installation."; \
+		echo "Makefile found $$HOME/.ghcup directory. Skipping GHCup installation."; \
 	fi
 
 	@if [ ! -d "$$HOME/.emsdk" ]; then \
 		echo "Installing emsdk..."; \
 		\
-		git clone https://github.com/emscripten-core/emsdk.git ~/.emsdk; \
+		git clone https://github.com/emscripten-core/emsdk.git $$HOME/.emsdk; \
 	else \
-		echo "Makefile found ~/.emsdk directory. Skipping emsdk installation."; \
+		echo "Makefile found $$HOME/.emsdk directory. Skipping emsdk installation."; \
 	fi
 
-	bash -c "source ~/.ghcup/env && ghcup install cabal $(CABAL_VERSION)"
+	bash -c "source $$HOME/.ghcup/env && ghcup install cabal $(CABAL_VERSION)"
 
 	@echo "Installing javascript-unknown-ghcjs-ghc..."
 
-	~/.emsdk/emsdk install $(EMSDK_VERSION)
-	~/.emsdk/emsdk activate $(EMSDK_VERSION)
+	$$HOME/.emsdk/emsdk install $(EMSDK_VERSION)
+	$$HOME/.emsdk/emsdk activate $(EMSDK_VERSION)
 
-	bash -c "source ~/.ghcup/env && ghcup config add-release-channel cross"
-	bash -c "source ~/.ghcup/env && source ~/.emsdk/emsdk_env.sh && emconfigure ghcup install ghc --set javascript-unknown-ghcjs-$(GHC_VERSION)"
+	bash -c "source $$HOME/.ghcup/env && ghcup config add-release-channel cross"
+	bash -c "source $$HOME/.ghcup/env && source $$HOME/.emsdk/emsdk_env.sh && emconfigure ghcup install ghc --set javascript-unknown-ghcjs-$(GHC_VERSION)"
 
 	@echo ""
 	@echo "INIT-HASKELL SUCCESSFUL."
-	@echo "Please run 'source ~/.bashrc'."
+	@echo "Please run 'source $$HOME/.bashrc'."
 	@echo ""
