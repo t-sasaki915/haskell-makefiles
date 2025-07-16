@@ -10,7 +10,7 @@ init-ghc:
 	@command -v curl >/dev/null 2>&1 || { echo "Please install curl"; exit 1; }
 	@command -v git >/dev/null 2>&1 || { echo "Please install git"; exit 1; }
 
-	@command -v javascript-unknown-ghcjs-ghc-$(GHC_VERSION) >/dev/null 2>&1 || { \
+	@command -v javascript-unknown-ghcjs-ghc-$(GHC_VERSION) >/dev/null 2>&1 && { \
 		echo "javascript-unknown-ghcjs-ghc-$(GHC_VERSION) has already been installed."; \
 		exit 0; \
 	}
