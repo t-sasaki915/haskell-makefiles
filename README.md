@@ -9,7 +9,7 @@ This Makefile installs `javascript-unknown-ghcjs-ghc` to your system.
 make
 ```
 ```bash
-make -f <(curl -fsSL https://raw.githubusercontent.com/t-sasaki915/haskell-makefiles/refs/tags/0.1.0.0/javascript-unknown-ghcjs-ghc/Makefile)
+make -f <(curl -fsSL https://raw.githubusercontent.com/t-sasaki915/haskell-makefiles/refs/tags/0.1.0.0/ghc/javascript-unknown-ghcjs-ghc/Makefile)
 ```
 If you want to specify which GHC version to install:
 ```bash
@@ -17,7 +17,7 @@ If you want to specify which GHC version to install:
 make GHC_VERSION=??? EMSDK_VERSION=???
 ```
 ```bash
-make -f <(curl -fsSL https://raw.githubusercontent.com/t-sasaki915/haskell-makefiles/refs/tags/0.1.0.0/javascript-unknown-ghcjs-ghc/Makefile) GHC_VERSION=??? EMSDK_VERSION=???
+make -f <(curl -fsSL https://raw.githubusercontent.com/t-sasaki915/haskell-makefiles/refs/tags/0.1.0.0/ghc/javascript-unknown-ghcjs-ghc/Makefile) GHC_VERSION=??? EMSDK_VERSION=???
 ```
 
 ## `utils/haskell-tools/Makefile`
