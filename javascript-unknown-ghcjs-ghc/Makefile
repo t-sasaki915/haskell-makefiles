@@ -42,6 +42,6 @@ init-ghc:
 	bash -c "source $$HOME/.ghcup/env && source $$HOME/.emsdk/emsdk_env.sh && emconfigure ghcup install ghc --set javascript-unknown-ghcjs-$(GHC_VERSION)"
 
 	@echo ""
-	@echo "INIT-HASKELL SUCCESSFUL."
+	@echo "INIT-GHC SUCCESSFUL."
 	@echo "Please run 'source $$HOME/.bashrc'."
 	@echo ""
