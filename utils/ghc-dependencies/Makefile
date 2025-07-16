@@ -55,10 +55,10 @@ init-ghc-dependencies:
 			if [ "$$DEBIAN_VERSION" -ge 11 ] && [ "$$DEBIAN_VERSION" -lt 12 ]; then \
 				VERSION_FRIENDLY=$(DEBIAN_11_12_VERSION); \
 				DEPENDENCIES="$(DEBIAN_11_12)"; \
-			else if [ "$$DEBIAN_VERSION" -ge 12 ] && [ "$$DEBIAN_VERSION" -lt 13 ]; then \
+			elif [ "$$DEBIAN_VERSION" -ge 12 ] && [ "$$DEBIAN_VERSION" -lt 13 ]; then \
 				VERSION_FRIENDLY=$(DEBIAN_12_13_VERSION); \
 				DEPENDENCIES="$(DEBIAN_12_13)"; \
-			else if [ "$$DEBIAN_VERSION" -ge 13 ]; then \
+			elif [ "$$DEBIAN_VERSION" -ge 13 ]; then \
 				VERSION_FRIENDLY=$(DEBIAN_13_VERSION); \
 				DEPENDENCIES="$(DEBIAN_13)"; \
 			else \
