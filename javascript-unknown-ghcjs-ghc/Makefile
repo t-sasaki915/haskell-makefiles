@@ -1,4 +1,3 @@
-CABAL_VERSION := 3.14.2.0
 GHC_VERSION   := 9.12.2
 EMSDK_VERSION := 3.1.74
 
@@ -33,8 +32,6 @@ init-ghc:
 	else \
 		echo "Makefile found $$HOME/.emsdk directory. Skipping emsdk installation."; \
 	fi
-
-	bash -c "source $$HOME/.ghcup/env && ghcup install cabal $(CABAL_VERSION)"
 
 	@echo "Installing javascript-unknown-ghcjs-ghc..."
 
