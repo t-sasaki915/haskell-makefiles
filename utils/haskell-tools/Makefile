@@ -5,6 +5,8 @@ INSTALL_CABAL := 1
 INSTALL_STACK := 1
 INSTALL_HLS   := 1
 
+SHELL := /bin/bash
+
 .PHONY: init-haskell-tools
 
 init-haskell-tools:
