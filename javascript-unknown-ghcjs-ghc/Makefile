@@ -15,7 +15,7 @@ init-ghc:
 		exit 0; \
 	}
 	
-	@if [ ! -d "~/.ghcup" ]; then \
+	@if [ ! -d "$$HOME/.ghcup" ]; then \
 		echo "Installing GHCup..."; \
 		\
 		export BOOTSTRAP_HASKELL_NONINTERACTIVE=1; \
@@ -26,7 +26,7 @@ init-ghc:
 		echo "Makefile found ~/.ghcup directory. Skipping GHCup installation."; \
 	fi
 
-	@if [ ! -d "~/.emsdk" ]; then \
+	@if [ ! -d "$$HOME/.emsdk" ]; then \
 		echo "Installing emsdk..."; \
 		\
 		git clone https://github.com/emscripten-core/emsdk.git ~/.emsdk; \
