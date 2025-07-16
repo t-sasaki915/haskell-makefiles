@@ -22,13 +22,13 @@ SHELL := /bin/bash
 .PHONY: init-ghc-dependencies
 
 init-ghc-dependencies:
-	. /etc/os-release && \
+	@. /etc/os-release && \
 	export DISTRO="$${ID,,}"; \
 	case "$$DISTRO" in \
 		debian) \
 			echo "DEBIAN"; \
 			;; \
-		*)
+		*) \
 			echo "Unknown distribution. Please refer https://www.haskell.org/ghcup/install/#system-requirements"; \
 			;; \
 	esac
