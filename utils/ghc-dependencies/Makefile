@@ -44,5 +44,4 @@ SHELL := /bin/bash
 .PHONY: init-ghc-dependencies
 
 init-ghc-dependencies:
-	chmod +x ./internal.sh
-	./internal.sh
+	@chmod +x ./internal.sh && ./internal.sh
