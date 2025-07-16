@@ -49,3 +49,8 @@ init-haskell-tools:
 			echo "haskell-language-server-$(HLS_VERSION) has already been installed."; \
 		fi \
 	fi
+
+	@echo ""
+	@echo "INIT-HASKELL-TOOLS SUCCESSFUL."
+	@echo "Please run 'source $$HOME/.bashrc'."
+	@echo ""
