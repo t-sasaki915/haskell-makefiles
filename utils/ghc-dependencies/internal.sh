@@ -9,13 +9,13 @@ case "$DISTRO" in
 			UPDATE_COMMAND="$DEBIAN_UPDATE_COMMAND"
 			INSTALL_COMMAND="$DEBIAN_INSTALL_COMMAND"
 			DEBIAN_VERSION=$(cut -d'.' -f1 < /etc/debian_version)
-			if [ "$$DEBIAN_VERSION" -ge 11 ] && [ "$$DEBIAN_VERSION" -lt 12 ]; then
+			if [ "$DEBIAN_VERSION" -ge 11 ] && [ "$DEBIAN_VERSION" -lt 12 ]; then
 				VERSION_FRIENDLY="$DEBIAN_11_12_VERSION"
 				DEPENDENCIES="$DEBIAN_11_12"
-			elif [ "$$DEBIAN_VERSION" -ge 12 ] && [ "$$DEBIAN_VERSION" -lt 13 ]; then
+			elif [ "$DEBIAN_VERSION" -ge 12 ] && [ "$DEBIAN_VERSION" -lt 13 ]; then
 				VERSION_FRIENDLY="$DEBIAN_12_13_VERSION"
 				DEPENDENCIES="$DEBIAN_12_13"
-			elif [ "$$DEBIAN_VERSION" -ge 13 ]; then
+			elif [ "$DEBIAN_VERSION" -ge 13 ]; then
 				VERSION_FRIENDLY="$DEBIAN_13_VERSION"
 				DEPENDENCIES="$DEBIAN_13"
 			else
