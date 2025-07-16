@@ -1,4 +1,4 @@
-# ghc-makefiles
+# haskell-makefiles
 Makefiles for setting up environments for various GHC flavours
 
 ## `javascript-unknown-ghcjs-ghc/Makefile`
