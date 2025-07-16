@@ -71,7 +71,7 @@ case "$DISTRO" in
 		;;
 	*)
 		echo "Unknown distribution."
-		exit 1;
+		exit 1
 		;;
 esac
 
