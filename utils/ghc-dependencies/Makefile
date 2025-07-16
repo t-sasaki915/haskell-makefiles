@@ -46,7 +46,7 @@ SHELL := /bin/bash
 init-ghc-dependencies:
 	@command -v curl >/dev/null 2>&1 || { echo "Please install curl"; exit 1; }
 
-	@if curl -fsSL https://raw.githubusercontent.com/t-sasaki915/haskell-makefiles/refs/heads/main/utils/ghc-dependencies/internal.sh | bash; then \
+	@if curl -fsSL https://raw.githubusercontent.com/t-sasaki915/haskell-makefiles/refs/tags/0.1.0.0/utils/ghc-dependencies/internal.sh | bash; then \
 		echo ""; \
 		echo "INIT-GHC-DEPENDENCIES SUCCESSFUL."; \
 		echo ""; \

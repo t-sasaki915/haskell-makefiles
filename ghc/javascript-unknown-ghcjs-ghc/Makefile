@@ -9,7 +9,7 @@ init-ghc:
 	@command -v curl >/dev/null 2>&1 || { echo "Please install curl"; exit 1; }
 	@command -v git >/dev/null 2>&1 || { echo "Please install git"; exit 1; }
 
-	make -f <(curl -fsSL https://raw.githubusercontent.com/t-sasaki915/haskell-makefiles/refs/heads/main/utils/ghc-dependencies/Makefile)
+	make -f <(curl -fsSL https://raw.githubusercontent.com/t-sasaki915/haskell-makefiles/refs/tags/0.1.0.0/utils/ghc-dependencies/Makefile)
 
 	@if [ -e "$$HOME/.ghcup/bin/javascript-unknown-ghcjs-ghc-$(GHC_VERSION)" ]; then \
 		echo "javascript-unknown-ghcjs-ghc-$(GHC_VERSION) has already been installed."; \
