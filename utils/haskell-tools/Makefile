@@ -12,7 +12,7 @@ init-haskell-tools:
 	@if [ -e "../ghcup/Makefile" ]; then \
 		cd ../ghcup/ && make; \
 	else \
-		make -f <(curl https://t-sasaki.net/hs-makefiles/0.1.0.0/utils/ghcup/Makefile); \
+		make -f <(curl https://t-sasaki.net/hs-makefiles/0.1.1.0/utils/ghcup/Makefile); \
 	fi
 
 	@if [ ! -e "$$HOME/.ghcup/bin/cabal-$(CABAL_VERSION)" ]; then \

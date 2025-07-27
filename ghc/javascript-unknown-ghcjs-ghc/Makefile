@@ -17,13 +17,13 @@ init-ghc:
 	@if [ -e "../../utils/ghc-dependencies/Makefile" ]; then \
 		cd ../../utils/ghc-dependencies/ && make; \
 	else \
-		make -f <(curl https://t-sasaki.net/hs-makefiles/0.1.0.0/utils/ghc-dependencies/Makefile); \
+		make -f <(curl https://t-sasaki.net/hs-makefiles/0.1.1.0/utils/ghc-dependencies/Makefile); \
 	fi
 	
 	@if [ -e "../../utils/ghcup/Makefile" ]; then \
 		cd ../../utils/ghcup/ && make; \
 	else \
-		make -f <(curl https://t-sasaki.net/hs-makefiles/0.1.0.0/utils/ghcup/Makefile); \
+		make -f <(curl https://t-sasaki.net/hs-makefiles/0.1.1.0/utils/ghcup/Makefile); \
 	fi
 
 	@if [ ! -d "$$HOME/.emsdk" ]; then \

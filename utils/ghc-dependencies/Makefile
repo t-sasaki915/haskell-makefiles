@@ -49,7 +49,7 @@ init-ghc-dependencies:
 	@if [ -e "./internal.sh" ]; then \
 		INTERNAL_COMMAND="cat internal.sh"; \
 	else \
-		INTERNAL_COMMAND="curl https://t-sasaki.net/hs-makefiles/0.1.0.0/utils/ghc-dependencies/internal.sh"; \
+		INTERNAL_COMMAND="curl https://t-sasaki.net/hs-makefiles/0.1.1.0/utils/ghc-dependencies/internal.sh"; \
 	fi; \
 	if $${INTERNAL_COMMAND} | bash; then \
 		echo ""; \
