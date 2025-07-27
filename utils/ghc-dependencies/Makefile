@@ -46,7 +46,12 @@ SHELL := /bin/bash
 init-ghc-dependencies:
 	@command -v curl >/dev/null 2>&1 || { echo "Please install curl"; exit 1; }
 
-	@if curl -fsSL https://t-sasaki.net/hs-makefiles/0.1.0.0/utils/ghc-dependencies/internal.sh | bash; then \
+	@if [ -e "./internal.sh" ]; then \
+		INTERNAL_COMMAND="cat internal.sh"; \
+	else \
+		INTERNAL_COMMAND="curl https://t-sasaki.net/hs-makefiles/0.1.0.0/utils/ghc-dependencies/internal.sh"; \
+	fi; \
+	if $${INTERNAL_COMMAND} | bash; then \
 		echo ""; \
 		echo "INIT-GHC-DEPENDENCIES SUCCESSFUL."; \
 		echo ""; \

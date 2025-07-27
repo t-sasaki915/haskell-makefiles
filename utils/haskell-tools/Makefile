@@ -9,14 +9,18 @@ SHELL := /bin/bash
 init-haskell-tools:
 	@command -v curl >/dev/null 2>&1 || { echo "Please install curl"; exit 1; }
 
-	make -f <(curl https://t-sasaki.net/hs-makefiles/0.1.0.0/utils/ghcup/Makefile)
+	@if [ -e "../ghcup/Makefile" ]; then \
+		cd ../ghcup/ && make; \
+	else \
+		make -f <(curl https://t-sasaki.net/hs-makefiles/0.1.0.0/utils/ghcup/Makefile); \
+	fi
 
 	@if [ ! -e "$$HOME/.ghcup/bin/cabal-$(CABAL_VERSION)" ]; then \
 		echo "Installing cabal..."; \
 		bash -c "source $$HOME/.ghcup/env && ghcup install cabal $(CABAL_VERSION)"; \
 	else \
 		echo "cabal-$(CABAL_VERSION) has already been installed."; \
-	fi \
+	fi
 
 	@if [ ! "$(ONLY_CABAL)" = "1" ]; then \
 		if [ ! -e "$$HOME/.ghcup/bin/stack-$(STACK_VERSION)" ]; then \

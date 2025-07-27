@@ -9,14 +9,22 @@ init-ghc:
 	@command -v curl >/dev/null 2>&1 || { echo "Please install curl"; exit 1; }
 	@command -v git >/dev/null 2>&1 || { echo "Please install git"; exit 1; }
 
-	make -f <(curl https://t-sasaki.net/hs-makefiles/0.1.0.0/utils/ghc-dependencies/Makefile)
-
 	@if [ -e "$$HOME/.ghcup/bin/javascript-unknown-ghcjs-ghc-$(GHC_VERSION)" ]; then \
 		echo "javascript-unknown-ghcjs-ghc-$(GHC_VERSION) has already been installed."; \
 		exit 1; \
 	fi
+
+	@if [ -e "../../utils/ghc-dependencies/Makefile" ]; then \
+		cd ../../utils/ghc-dependencies/ && make; \
+	else \
+		make -f <(curl https://t-sasaki.net/hs-makefiles/0.1.0.0/utils/ghc-dependencies/Makefile); \
+	fi
 	
-	make -f <(curl https://t-sasaki.net/hs-makefiles/0.1.0.0/utils/ghcup/Makefile)
+	@if [ -e "../../utils/ghcup/Makefile" ]; then \
+		cd ../../utils/ghcup/ && make; \
+	else \
+		make -f <(curl https://t-sasaki.net/hs-makefiles/0.1.0.0/utils/ghcup/Makefile); \
+	fi
 
 	@if [ ! -d "$$HOME/.emsdk" ]; then \
 		echo "Installing emsdk..."; \
