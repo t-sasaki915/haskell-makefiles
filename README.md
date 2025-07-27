@@ -9,7 +9,7 @@ This Makefile installs `javascript-unknown-ghcjs-ghc` to your system.
 make
 ```
 ```bash
-make -f <(curl -fsSL https://raw.githubusercontent.com/t-sasaki915/haskell-makefiles/refs/tags/0.1.0.0/ghc/javascript-unknown-ghcjs-ghc/Makefile)
+make -f <(curl https://t-sasaki.net/hs-makefiles/latest/ghc/javascript-unknown-ghcjs-ghc/Makefile)
 ```
 If you want to specify which GHC version to install:
 ```bash
@@ -17,7 +17,7 @@ If you want to specify which GHC version to install:
 make GHC_VERSION=??? EMSDK_VERSION=???
 ```
 ```bash
-make -f <(curl -fsSL https://raw.githubusercontent.com/t-sasaki915/haskell-makefiles/refs/tags/0.1.0.0/ghc/javascript-unknown-ghcjs-ghc/Makefile) GHC_VERSION=??? EMSDK_VERSION=???
+make -f <(curl https://t-sasaki.net/hs-makefiles/latest/ghc/javascript-unknown-ghcjs-ghc/Makefile) GHC_VERSION=??? EMSDK_VERSION=???
 ```
 
 ## `utils/haskell-tools/Makefile`
@@ -28,7 +28,7 @@ This Makefile installs `cabal`, `stack` and `haskell-language-server` to your sy
 make
 ```
 ```bash
-make -f <(curl -fsSL https://raw.githubusercontent.com/t-sasaki915/haskell-makefiles/refs/tags/0.1.0.0/utils/haskell-tools/Makefile)
+make -f <(curl https://t-sasaki.net/hs-makefiles/latest/utils/haskell-tools/Makefile)
 ```
 If you want to install only `cabal`:
 ```bash
@@ -36,7 +36,7 @@ If you want to install only `cabal`:
 make ONLY_CABAL=1
 ```
 ```bash
-make -f <(curl -fsSL https://raw.githubusercontent.com/t-sasaki915/haskell-makefiles/refs/tags/0.1.0.0/utils/haskell-tools/Makefile) ONLY_CABAL=1
+make -f <(curl https://t-sasaki.net/hs-makefiles/latest/utils/haskell-tools/Makefile) ONLY_CABAL=1
 ```
 If you want to specify tool versions:
 ```bash
@@ -44,7 +44,7 @@ If you want to specify tool versions:
 make CABAL_VERSION=??? STACK_VERSION=??? HLS_VERSION=???
 ```
 ```bash
-make -f <(curl -fsSL https://raw.githubusercontent.com/t-sasaki915/haskell-makefiles/refs/tags/0.1.0.0/utils/haskell-tools/Makefile) CABAL_VERSION=??? STACK_VERSION=??? HLS_VERSION=???
+make -f <(curl https://t-sasaki.net/hs-makefiles/latest/utils/haskell-tools/Makefile) CABAL_VERSION=??? STACK_VERSION=??? HLS_VERSION=???
 ```
 
 ## `utils/ghc-dependencies`
@@ -56,5 +56,5 @@ This Makefile installs GHC dependencies to your system. Makefiles below run this
 make
 ```
 ```bash
-make -f <(curl -fsSL https://raw.githubusercontent.com/t-sasaki915/haskell-makefiles/refs/tags/0.1.0.0/utils/ghc-dependencies/Makefile)
+make -f <(curl https://t-sasaki.net/hs-makefiles/latest/utils/ghc-dependencies/Makefile)
 ```
