@@ -20,6 +20,17 @@ make GHC_VERSION=??? EMSDK_VERSION=???
 make -f <(curl https://t-sasaki.net/hs-makefiles/latest/ghc/javascript-unknown-ghcjs-ghc/Makefile) GHC_VERSION=??? EMSDK_VERSION=???
 ```
 
+## `utils/ghcup/Makefile`
+This Makefile installs a minimal `ghcup` to your system.
+### Usage
+```bash
+# Clone or download this repository, run `cd utils/ghcup` and
+make
+```
+```bash
+make -f <(curl https://t-sasaki.net/hs-makefiles/latest/utils/ghcup/Makefile)
+```
+
 ## `utils/haskell-tools/Makefile`
 This Makefile installs `cabal`, `stack` and `haskell-language-server` to your system.
 ### Usage
