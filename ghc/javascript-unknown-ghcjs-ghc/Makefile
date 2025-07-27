@@ -16,16 +16,7 @@ init-ghc:
 		exit 1; \
 	fi
 	
-	@if [ ! -d "$$HOME/.ghcup" ]; then \
-		echo "Installing GHCup..."; \
-		\
-		export BOOTSTRAP_HASKELL_NONINTERACTIVE=1; \
-		export BOOTSTRAP_HASKELL_MINIMAL=1; \
-		export BOOTSTRAP_HASKELL_ADJUST_BASHRC=1; \
-		curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh; \
-	else \
-		echo "Makefile found $$HOME/.ghcup directory. Skipping GHCup installation."; \
-	fi
+	make -f <(curl https://t-sasaki.net/hs-makefiles/0.1.0.0/utils/ghcup/Makefile)
 
 	@if [ ! -d "$$HOME/.emsdk" ]; then \
 		echo "Installing emsdk..."; \
